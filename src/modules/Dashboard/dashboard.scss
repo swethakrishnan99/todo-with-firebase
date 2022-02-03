@@ -1,0 +1,269 @@
+.dashboard-page {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  @media only screen and (max-width: 1023px) {
+    flex-direction: column;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content {
+    width: 516px;
+    margin: 5px;
+    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+      width: 400px;
+      font-size: 16px;
+    }
+    @media only screen and (max-width: 519px) {
+      width: 265px;
+      font-size: 15px;
+    }
+  }
+
+  .box1 > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .todo-list::-webkit-scrollbar {
+    display: none;
+  }
+  .input {
+    width: 378px;
+    height: 64px;
+    align-items: center;
+    padding: 4px 6px;
+    margin: 10px 0px;
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    border-radius: 2px;
+    @media only screen and (max-width: 1280px) {
+      height: 50px;
+      width: 358px;
+    }
+    @media only screen and (max-width: 519px) {
+      height: 35px;
+      width: 250px;
+      font-size: 16px;
+    }
+  }
+  .input,
+  .option .input::placeholder {
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.85);
+    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+      font-size: 16px;
+    }
+    @media only screen and (max-width: 519px) {
+      font-size: 16px;
+    }
+  }
+  .add-btn {
+    justify-content: center;
+    align-items: center;
+    padding: 5px 16px;
+    margin: 10px 0px;
+    width: 342px;
+    height: 64px;
+
+    background: #597ef7;
+    border: 1px solid #1890ff;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+    border-radius: 2px;
+
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+      height: 50px;
+      width: 324px;
+      font-size: 16px;
+    }
+    @media only screen and (max-width: 519px) {
+      height: 35px;
+      width: 250px;
+      font-size: 16px;
+    }
+  }
+  .logout-btn {
+    position: absolute;
+    right: 6.75%;
+    top: 7.81%;
+    bottom: 85.77%;
+    width: fit-content;
+    height: 40px;
+    padding: 5px 16px;
+
+    background: #597ef7;
+    border: 1px solid #1890ff;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+    border-radius: 2px;
+
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+      font-size: 16px;
+    }
+    @media only screen and (max-width: 519px) {
+      height: 35px;
+      padding: 1px 5px;
+      font-size: 16px;
+    }
+  }
+  .title-list {
+    width: 125px;
+    height: 29px;
+    font-size: 25.14px;
+    line-height: 29px;
+    font-weight: bold;
+    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+      font-weight: 500;
+      font-size: 23px;
+    }
+    @media only screen and (max-width: 519px) {
+      font-weight: 500;
+      font-size: 23px;
+    }
+  }
+  .box2 > div {
+    width: 30vw;
+    min-width: 490px;
+    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+      min-width: 400px;
+    }
+    @media only screen and (max-width: 519px) {
+      min-width: 270px;
+    }
+  }
+
+  .box2 form {
+    display: flex;
+    justify-content: space-between;
+  }
+  .list-input {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    border-radius: 2px;
+    height: 40px;
+  }
+
+  .search {
+    width: 240px;
+    @media only screen and (max-width: 1280px) {
+      width: 200px;
+    }
+    @media only screen and (max-width: 519px) {
+      width: 180px;
+      height: 35px;
+      font-size: 12px;
+    }
+  }
+  .filter {
+    width: 160px;
+    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+      width: 130px;
+    }
+    @media only screen and (max-width: 519px) {
+      width: 70px;
+      height: 35px;
+      font-size: 12px;
+    }
+  }
+  .border {
+    position: absolute;
+    width: 80vh;
+    height: 0px;
+
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    transform: rotate(90deg);
+    @media only screen and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  .todo-list {
+    overflow-y: scroll;
+    width: 30vw;
+    min-width: 490px;
+    height: 430px;
+    list-style: none;
+    padding-inline-start: 0;
+    @media only screen and (max-width: 1280px) and (min-width: 1024px) {
+      min-width: 400px;
+      height: 330px;
+    }
+    @media only screen and (max-width: 519px) {
+      min-width: 260px;
+      font-size: 23px;
+      padding-inline-end: 0;
+    }
+
+    .todo-items {
+      height: 65px;
+      padding-top: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+      display: flex;
+      justify-content: space-between;
+      .item-title {
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 28px;
+        @media only screen and (max-width: 1280px) {
+          font-weight: 400;
+          font-size: 16px;
+        }
+      }
+      .item-description {
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 28px;
+        @media only screen and (max-width: 1280px) {
+          font-weight: 300;
+          font-size: 14px;
+        }
+      }
+      .icon {
+        font-size: 15px;
+        font-weight: lighter;
+        margin-right: 20px;
+        color: rgba(0, 0, 0, 0.85);
+      }
+      .selector {
+        display: flex;
+        flex-direction: column;
+        .option {
+          font-size: 14px;
+          line-height: 22px;
+          border-radius: 2px;
+          padding: 5px 12px;
+          text-align: center;
+          color: rgba(0, 0, 0, 0.85);
+          background-color: white;
+          z-index: 1;
+          margin: 0px 8px;
+        }
+        .option:hover {
+          background-color: #f5f5f5;
+        }
+
+        .icon {
+          position: static;
+          float: right;
+          padding-top: 10px;
+        }
+      }
+    }
+  }
+}

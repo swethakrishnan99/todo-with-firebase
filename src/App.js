@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
-import LoginPage from './modules/LoginPage';
-import Dashboard from './modules/Dashboard';
+import LoginPage from './modules/LoginPage/LoginPage';
+import Dashboard from './modules/Dashboard/Dashboard';
 
 function App() {
   return (

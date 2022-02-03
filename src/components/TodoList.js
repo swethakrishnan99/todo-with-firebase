@@ -21,7 +21,6 @@ export default function TodoList(props) {
                             <div className="flex-column">
                                 <span className="item-title title">{element.title}</span>
                                 <span className="item-description">{element.description}</span>
-                                {element.favorite && <span>f</span>}
                             </div>
                             <div className="selector">
                                 <span onClick={() => showOption(element)}>

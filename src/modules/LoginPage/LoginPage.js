@@ -1,15 +1,15 @@
 import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../common/Logo";
-import image from "../assets/Illustration Export.png";
-import googleLogo from "../assets/grommet-icons_google.png";
-import { auth, db } from "../Firebase";
+import Logo from "../../common/Logo";
+import image from "../../assets/Illustration Export.png";
+import googleLogo from "../../assets/grommet-icons_google.png";
+import { auth } from "../../Firebase";
 import {
     signInWithPopup,
     GoogleAuthProvider,
 } from "firebase/auth";
-import { setDoc, doc } from "firebase/firestore";
+import './loginpage.scss'
 
 export default function LoginPage() {
     const navigate = useNavigate();
@@ -24,19 +24,13 @@ export default function LoginPage() {
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider)
             .then((res) => {
-                console.log(res)
-                const docRef = doc(db, "users", `${auth.currentUser.uid}`);
-                setDoc(docRef, { name: auth.currentUser.displayName, todo: [] })
-                    .then(() => console.log("successful user login"))
-                    .catch((err) => (err));
-
-
+                console.log("login success ")
             })
             .catch((err) => console.log(err));
     };
     return (
         <div className="login-page flex-row">
-            <div className="box">
+            <div className="box flex-column">
                 <Logo />
                 <p className="title title-todo">LOGIN</p>
                 <p className="content">
@@ -51,7 +45,7 @@ export default function LoginPage() {
                     <span> Sign in using google</span>
                 </button>
             </div>
-            <div className="box">
+            <div className="box img-box">
                 <img src={image} alt="" />
             </div>
         </div>

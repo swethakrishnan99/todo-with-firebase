@@ -1,27 +1,45 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { db, auth } from "../Firebase";
-import { updateDoc, getDoc, doc } from "firebase/firestore";
-import AddTodo from "../components/AddTodo";
-import TodoSearch from "../components/TodoSearch";
+import { db, auth } from "../../Firebase";
+import { updateDoc, getDoc, doc, setDoc } from "firebase/firestore";
+import AddTodo from "../../components/AddTodo";
+import TodoSearch from "../../components/TodoSearch";
+import './dashboard.scss'
 
 export default function Dashboard() {
     const [todo, setTodo] = useState([]);
     const [status, setStatus] = useState(todo);
     const navigate = useNavigate();
 
-    // get todo
+    // set and get todo 
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
-            if (user) {
-                const docRef = doc(db, "users", `${auth.currentUser.uid}`);
-                getDoc(docRef).then((snapshot) => setTodo([...snapshot.data().todo]));
-            } else {
-                navigate("/");
+            try {
+
+                if (user) {
+                    const docRef = doc(db, "users", `${auth.currentUser.uid}`);
+                    getDoc(docRef).then((snapshot) => {
+                        if (snapshot.exists()) {
+                            setTodo([...snapshot.data().todo])
+                        }
+                        else {
+                            setDoc(docRef, { name: auth.currentUser.displayName, todo: [] })
+                                .then(() => console.log("successful user login"))
+                                .catch((err) => (err));
+                        }
+                    }).catch(err => console.log(err));
+                } else {
+                    navigate("/");
+                }
             }
+            catch (err) {
+                console.log(err)
+            }
+
         });
     }, []);
+
     // update todo
     useEffect(() => {
         return () =>
@@ -29,7 +47,7 @@ export default function Dashboard() {
                 if (user) {
                     const docRef = doc(db, "users", `${auth.currentUser.uid}`);
                     updateDoc(docRef, { todo: todo })
-                        .then(console.log("successfully updated"))
+                        .then()
                         .catch((err) => console.log(err));
                 }
             });
@@ -80,9 +98,9 @@ export default function Dashboard() {
         }
     };
     return (
-        <div className="flex-row dashboard-page">
-            <button className="logout-btn">Log out</button>
+        <div className="dashboard-page">
             <AddTodo addNewTodo={addNewTodo} />
+            <hr className="border" />
             <TodoSearch
                 status={status}
                 statusHandler={statusHandler}

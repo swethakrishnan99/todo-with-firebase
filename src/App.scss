@@ -28,256 +28,41 @@
     font-weight: 500;
     font-size: 33.1429px;
     line-height: 39px;
+    margin: 5px;
+    @media only screen and (max-width: 1280px) {
+      font-size: 30px;
+    }
   }
   .content {
     font-weight: normal;
     font-size: 20px;
     line-height: 150%;
-
     text-align: center;
-
     color: rgba(0, 0, 0, 0.55);
   }
-  .login-page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
-    .title-todo {
-      position: absolute;
-      width: 101.04px;
-      height: 40px;
-      left: 374px;
-      top: 364px;
-    }
-    .content {
-      position: absolute;
-      width: 516px;
-      height: 123px;
-      left: 170px;
-      top: 431px;
-    }
-
-    .login-btn {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 5px 16px;
-      position: absolute;
-      width: 387px;
-      height: 69px;
-      left: 216px;
-      top: 611px;
-
-      background: #597ef7;
-      border: none;
-      box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-      border-radius: 2px;
-    }
-    .google-logo {
-      position: relative;
-      right: 10px;
-      width: 58px;
-      height: 57px;
-      box-sizing: border-box;
-      padding: 8px;
-      background: #ffffff;
-      border-radius: 5px;
-    }
-    .login-btn > span {
-      width: 287px;
-      height: 47px;
-      padding-top: 10px;
-      font-weight: normal;
-      font-size: 26px;
-      line-height: 30px;
-
-      color: #ffffff;
+  .scrollUp,
+  .scrollDown {
+    font-size: 35px;
+    color: rgba(0, 0, 0, 0.15);
+  }
+  .scrollDown {
+    position: absolute;
+    display: none;
+    top: 105%;
+    @media only screen and (max-width: 1023px) {
+      display: inherit;
     }
   }
-  .dashboard-page {
-    .title-todo {
-      position: absolute;
-      width: 127.7px;
-      height: 37.96px;
-      left: 350px;
-      top: 267px;
-    }
-
-    .content {
-      position: absolute;
-      width: 516px;
-      height: 123px;
-      left: 150px;
-      top: 326px;
-    }
-    .border-right {
-      border-right: 2px solid black;
-    }
-    .input1 {
-      top: 488px;
-    }
-    .input2 {
-      top: 581px;
-    }
-    .input {
-      position: absolute;
-      width: 378px;
-      height: 64px;
-      left: 201px;
-      align-items: center;
-      padding: 8px 12px;
-      background: #ffffff;
-
-      border: 1px solid #d9d9d9;
-      box-sizing: border-box;
-      border-radius: 2px;
-    }
-    .input,
-    .option .input::placeholder {
-      font-weight: normal;
-      font-size: 20px;
-      color: rgba(0, 0, 0, 0.85);
-      margin: 0px 0px;
-    }
-    .title-list {
-      position: absolute;
-      width: 125px;
-      height: 29px;
-      right: 590px;
-      top: 100px;
-      font-size: 25.14px;
-      line-height: 29px;
-      font-weight: bold;
-    }
-    .list-input {
-      position: absolute;
-      background: #ffffff;
-      border: 1px solid #d9d9d9;
-      box-sizing: border-box;
-      border-radius: 2px;
-      height: 40px;
-    }
-
-    .search {
-      width: 240px;
-      right: 470px;
-      top: 182px;
-    }
-    .filter {
-      position: absolute;
-      width: 160px;
-      right: 102px;
-      top: 182px;
-    }
-    .option-div {
-      background-color: white;
-    }
-    .option {
-      font-size: 14px;
-      line-height: 22px;
-      // width: 118px;
-      // height: 104px;
-      border-radius: 2px;
-      padding: 5px 12px;
-      text-align: center;
-      color: rgba(0, 0, 0, 0.85);
-      margin: 0px 8px;
-    }
-    .option:hover {
-      background-color: #f5f5f5;
-    }
-
-    button {
-      justify-content: center;
-      align-items: center;
-      padding: 5px 16px;
-      position: absolute;
-      width: 342px;
-      height: 64px;
-      left: 225px;
-      top: 690px;
-      background: #597ef7;
-      border: 1px solid #1890ff;
-      box-sizing: border-box;
-      box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-      border-radius: 2px;
-
-      font-weight: 500;
-      font-size: 20px;
-      color: white;
-    }
-    .todo-list::-webkit-scrollbar {
-      display: none;
-    }
-    .todo-list {
-      position: absolute;
-      overflow-y: scroll;
-      width: 614.02px;
-      height: 430px;
-      top: 300px;
-      right: 100.08px;
-      list-style: none;
-
-      .todo-items {
-        height: 65px;
-        padding-top: 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-        display: flex;
-        justify-content: space-between;
-        .item-title {
-          font-weight: 600;
-          font-size: 17px;
-          line-height: 28px;
-        }
-        .item-description {
-          font-weight: normal;
-          font-size: 15px;
-          line-height: 28px;
-        }
-        .icon {
-          font-size: 15px;
-          font-weight: lighter;
-          margin-right: 20px;
-          color: rgba(0, 0, 0, 0.85);
-        }
-      }
-    }
-
-    .list-bottom-border {
-      position: absolute;
-      width: 616.02px;
-      height: 0px;
-      left: 1498.01px;
-      top: 439.48px;
-
-      border: 5px solid rgba(0, 0, 0, 0.15);
+  .scrollUp {
+    position: absolute;
+    top: 92%;
+    display: none;
+    @media only screen and (max-width: 1023px) {
+      display: inherit;
     }
   }
-}
-.selector {
-  display: flex;
-  flex-direction: column;
-
-  .icon {
-    position: static;
-    float: right;
-    padding-top: 10px;
+  .scrollUp:hover,
+  .scrollDown:hover {
+    width: 40px;
   }
-}
-
-.border {
-  position: absolute;
-  width: 875px;
-  height: 0px;
-  right: 25vw;
-  top: 49vh;
-
-  border: 2px solid rgba(0, 0, 0, 0.15);
-  transform: rotate(90deg);
 }

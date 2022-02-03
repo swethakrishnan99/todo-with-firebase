@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import Logo from "../common/Logo";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-scroll";
 
 
 export default function AddTodo(props) {
@@ -16,8 +19,9 @@ export default function AddTodo(props) {
         props.addNewTodo(input)
         setInput({ title: "", description: "" })
     };
+
     return (
-        <div className="box box1">
+        <div id="addPage" className="box box1">
             <Logo />
             <p className="title title-todo">TODO</p>
             <p className="content">
@@ -26,6 +30,7 @@ export default function AddTodo(props) {
                 amet, consectetur adipiscing elit. Aliquet at eleifend feugiat vitae
                 faucibus nibh dolor dui.
             </p>
+
             <form>
                 <input
                     type="text"
@@ -43,9 +48,9 @@ export default function AddTodo(props) {
                     onChange={handleChange}
                     placeholder="Description"
                 />
-                <button disabled={!input.title} type="submit" onClick={handleSubmit} className="flex-row">Add</button>
+                <button disabled={!input.title} type="submit" onClick={handleSubmit} className="flex-row add-btn">Add</button>
             </form>
-            <hr className="border" />
+            <Link to="listPage" spy={true} smooth={true}> <span className="scrollUp"><FontAwesomeIcon icon={faChevronDown} /></span></Link>
         </div>
     );
 }
